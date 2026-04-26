@@ -19,7 +19,7 @@ spec:
   timeout: 5m
   chart:
     spec:
-      chart: metallb/metallb
+      chart: metallb
       sourceRef:
         kind: HelmRepository
         name: metallb
