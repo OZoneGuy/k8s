@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: metallb
+  name: metallb-repository
   namespace: helm
 spec:
   interval: 15m
@@ -11,7 +11,7 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: metallb
+  name: metallb-release
   namespace: helm
 spec:
   interval: 15m
