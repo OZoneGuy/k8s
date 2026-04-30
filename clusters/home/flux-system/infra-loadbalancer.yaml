@@ -14,4 +14,4 @@ spec:
     - name: namespaces
     - name: helm-releases
       readyExpr: |
-        status.conditions.find(c, c.type == 'Ready' && c.status == 'True') != null
+        dep.status.conditions.filter(e, e.type == 'Ready').all(e, e.status == 'True')
