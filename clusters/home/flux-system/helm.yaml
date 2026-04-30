@@ -10,5 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+  readyExpr: |
+    status.conditions.find(c, c.type == 'Ready' && c.status == 'True') != null
   dependsOn:
     - name: namespaces
