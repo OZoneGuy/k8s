@@ -22,5 +22,5 @@ spec:
       chart: metallb
       sourceRef:
         kind: HelmRepository
-        name: metallb
+        name: metallb-repository
       interval: 5m
