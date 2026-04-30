@@ -13,3 +13,4 @@ spec:
   dependsOn:
     - name: namespaces
     - name: metallb-release
+      namespace: helm
