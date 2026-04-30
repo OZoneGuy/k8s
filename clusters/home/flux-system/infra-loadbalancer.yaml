@@ -13,3 +13,5 @@ spec:
   dependsOn:
     - name: namespaces
     - name: helm-releases
+      readyExpr: |
+        status.conditions.find(c, c.type == 'Ready' && c.status == 'True') != null
