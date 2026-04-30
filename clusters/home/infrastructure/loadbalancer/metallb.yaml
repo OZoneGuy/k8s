@@ -1,26 +1,19 @@
 # The load balancer uses MetalLb
 ---
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
 metadata:
-  name: metallb
+  name: main-pool
   namespace: loadbalancer-system
 spec:
-  interval: 15m
-  url: https://metallb.github.io/metallb
+  addresses:
+    - 192.168.2.100-192.168.2.100
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
 metadata:
-  name: metallb
+  name: l2-adv
   namespace: loadbalancer-system
 spec:
-  interval: 15m
-  timeout: 5m
-  chart:
-    spec:
-      chart: metallb
-      sourceRef:
-        kind: HelmRepository
-        name: metallb
-      interval: 5m
+  ipAddressPools:
+    - main-pool
