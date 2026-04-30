@@ -16,10 +16,10 @@ metadata:
 spec:
   interval: 15m
   timeout: 5m
+  targetNamespace: loadbalancer-system
   chart:
     spec:
       chart: metallb
-      targetNamespace: loadbalancer-system
       sourceRef:
         kind: HelmRepository
         name: metallb
