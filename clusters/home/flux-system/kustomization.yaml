@@ -6,3 +6,4 @@ resources:
   - namespaces.yaml
   - helm.yaml
   - infra-loadbalancer.yaml
+  - secrets.yaml
