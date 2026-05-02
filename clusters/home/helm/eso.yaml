@@ -20,7 +20,7 @@ spec:
   targetNamespace: external-secrets
   chart:
     spec:
-      chart: external-secretsn
+      chart: external-secrets
       sourceRef:
         kind: HelmRepository
         name: eso-repository
