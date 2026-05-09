@@ -17,10 +17,10 @@ spec:
   interval: 15m
   timeout: 5m
   targetNamespace: cert-manager
+  chartRef:
+    kind: OCIRepository
+    name: cert-manager-repository
   chart:
     spec:
       chart: external-secrets
-      sourceRef:
-        kind: OCIRepository
-        name: cert-manager-repository
       interval: 5m
