@@ -37,6 +37,6 @@ spec:
     service:
       pipelines:
         traces:
-          receivers: [host_metrics,otlp]
+          receivers: [hostmetrics,otlp]
           processors: [memory_limiter]
           exporters: [otlp_grpc]
