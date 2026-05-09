@@ -7,7 +7,6 @@ spec:
   interval: 10m0s
   path: ./clusters/home/helm
   prune: true
-  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system

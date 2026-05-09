@@ -22,7 +22,6 @@ spec:
     spec:
       reconcileStrategy: ChartVersion
       chart: cert-manager
-      # version: 1.12.x
       sourceRef:
         kind: HelmRepository
         name: cert-manager-repository
