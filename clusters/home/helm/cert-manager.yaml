@@ -20,9 +20,13 @@ spec:
   targetNamespace: cert-manager
   chart:
     spec:
+      reconcileStrategy: ChartVersion
       chart: cert-manager
       version: 1.12.x
       sourceRef:
         kind: HelmRepository
         name: cert-manager-repository
       interval: 5m
+  values:
+    crds:
+      enabled: true
