@@ -8,3 +8,4 @@ resources:
   - infra-loadbalancer.yaml
   - secrets.yaml
   - otel.yaml
+  - cert-manager
