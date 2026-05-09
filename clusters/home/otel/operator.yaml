@@ -6,7 +6,7 @@ metadata:
 spec:
   config:
     receivers:
-      host_metrics:
+      hostmetrics:
         scrapers:
           cpu:
           filesystem:
