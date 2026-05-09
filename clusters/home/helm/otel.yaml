@@ -1,0 +1,27 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: otel-repository
+  namespace: helm
+spec:
+  interval: 15m
+  url: https://open-telemetry.github.io/opentelemetry-helm-charts
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: otel-release
+  namespace: helm
+spec:
+  interval: 15m
+  timeout: 5m
+  targetNamespace: open-telemetry
+  chart:
+    spec:
+      chart: opentelemetry-operator
+      sourceRef:
+        kind: HelmRepository
+        name: otel-repository
+      interval: 5m
