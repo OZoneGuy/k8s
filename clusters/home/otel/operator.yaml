@@ -40,5 +40,5 @@ spec:
           level: "debug"
       pipelines:
         metrics:
-          receivers: [hostmetrics,otlp]
+          receivers: [hostmetrics,otlp,k8s_cluster]
           exporters: [otlp_grpc]
