@@ -1,12 +1,14 @@
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: OCIRepository
+kind: HelmRepository
 metadata:
   name: cert-manager-repository
   namespace: helm
 spec:
   interval: 15m
   url: oci://quay.io/jetstack/charts/cert-manager
+  type: oci
+
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
@@ -17,10 +19,10 @@ spec:
   interval: 15m
   timeout: 5m
   targetNamespace: cert-manager
-  chartRef:
-    kind: OCIRepository
-    name: cert-manager-repository
   chart:
     spec:
       chart: external-secrets
+      sourceRef:
+        kind: HelmRepository
+        name: cert-manager-repository
       interval: 5m
