@@ -7,3 +7,4 @@ resources:
   - helm.yaml
   - infra-loadbalancer.yaml
   - secrets.yaml
+  - otel.yaml
