@@ -39,10 +39,6 @@ spec:
         logs:
           level: "debug"
       pipelines:
-        traces:
-          receivers: [otlp]
-          processors: [memory_limiter]
-          exporters: [otlp_grpc]
         metrics:
           receivers: [hostmetrics,otlp]
           exporters: [otlp_grpc]
