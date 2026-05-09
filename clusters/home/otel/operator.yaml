@@ -35,6 +35,9 @@ spec:
           insecure: true
 
     service:
+      telemetry:
+        logs:
+          level: "debug"
       pipelines:
         traces:
           receivers: [otlp]
@@ -42,5 +45,4 @@ spec:
           exporters: [otlp_grpc]
         metrics:
           receivers: [hostmetrics,otlp]
-          processors: [memory_limiter]
           exporters: [otlp_grpc]
