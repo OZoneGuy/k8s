@@ -44,9 +44,6 @@ spec:
         tls:
           insecure: true
     service:
-      telemetry:
-        logs:
-          level: "debug"
       pipelines:
         metrics:
           receivers: [hostmetrics,otlp,k8s_cluster]
