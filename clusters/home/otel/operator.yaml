@@ -37,10 +37,10 @@ spec:
       resourcedetection:
         detectors: [system]
         override: false
-      resource:
-        attributes:
+      attributes:
+        actions:
           - key: otel.collector.role
-            value: daemonset-collector
+            value: k8s-collector
             action: upsert
 
     exporters:
