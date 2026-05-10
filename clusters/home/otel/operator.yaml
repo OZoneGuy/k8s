@@ -7,13 +7,13 @@ spec:
   serviceAccount: otelcollector
   volumes:
     - name: hostfs
-      hostpath:
+      hostPath:
         path: /
   volumeMounts:
     - name: hostfs
       mountPath: /hostfs
       readOnly: true
-      mountPropogation: HsotToContainer
+      mountPropagation: HsotToContainer
   mode: daemonset
   config:
     receivers:
