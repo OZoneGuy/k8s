@@ -13,7 +13,7 @@ spec:
     - name: hostfs
       mountPath: /hostfs
       readOnly: true
-      mountPropagation: HsotToContainer
+      mountPropagation: HostToContainer
   mode: daemonset
   config:
     receivers:
