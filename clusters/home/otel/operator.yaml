@@ -4,6 +4,7 @@ metadata:
   name: collector
   namespace: open-telemetry
 spec:
+  serviceAccount: otelcollector
   volumes:
     - name: hostfs
       hostpath:
