@@ -28,6 +28,8 @@ spec:
           - cpu
           - memory
           - pods
+      kubeletstats:
+        auth_type: "serviceAccount"
       otlp:
         protocols:
           grpc:
@@ -36,7 +38,7 @@ spec:
       k8s_attributes:
       resourcedetection:
         detectors: [system]
-        override: false
+        override: true
       attributes:
         actions:
           - key: host.name
@@ -54,6 +56,6 @@ spec:
     service:
       pipelines:
         metrics:
-          receivers: [hostmetrics,otlp,k8s_cluster]
+          receivers: [hostmetrics,otlp,k8s_cluster,kubeletstats]
           processors: [k8s_attributes, resourcedetection, attributes]
           exporters: [otlp_grpc]
