@@ -9,7 +9,7 @@ spec:
     - name: K8S_NODE_IP
       valueFrom:
         fieldRef:
-          fieldPath: status.hostIp
+          fieldPath: status.hostIP
   volumes:
     - name: hostfs
       hostPath:
